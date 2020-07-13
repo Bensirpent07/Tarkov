@@ -1,0 +1,52 @@
+div#overlay{
+	justify-content: center;
+}
+div#contentContainer{
+	color: white;
+}
+div#imgContainer{
+	display: flex;
+	flex-direction: column;
+	transform: translateX(-50%);
+	opacity: 0;
+	transition: 1s;
+}
+img#mePic{
+	padding: 25px;
+	border-radius:50%;
+	background-color:rgba(72,75,82, .25);
+	align-self: center;
+}
+span#meName{
+	font-size: 30px;
+}
+div.line{
+	margin: 0 auto 10px;
+	width: 100px;
+	height: 2px;
+	background-color: #C3A17C;
+}
+div.line2{
+	margin-bottom: 20px;
+	width: 50px;
+	height: 4px;
+	background-color: #C3A17C;
+}
+span#socialMedia{
+	font-size: 25px;
+	margin-top: 10px;
+}
+span#socialMedia a{
+	color: gray;
+	transition: .25s;
+}
+a#twitter:hover{
+	color: #1DA1F3;
+}
+
+/* Animations */
+.slideLeft{
+	opacity: 0;
+	transform: translateX(50%);
+	transition: 1s;
+}

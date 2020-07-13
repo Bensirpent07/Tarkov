@@ -1,0 +1,16 @@
+div#overlay{
+	justify-content: center!important;
+}
+label, small{
+	color: white;
+}
+div#message-alert{
+	max-width: 300px;
+	text-align: center;
+	margin: 25px auto 25px;
+	display: none;
+}
+.invalid{
+	color: #ff4d52;
+	margin: 5px 0 0;
+}
