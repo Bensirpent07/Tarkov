@@ -9,7 +9,7 @@ class Ammo extends Model
     public function getCalibers(){
         //Gather all ammo and group them by caliber
         $builder = $this->db->table('ammo');
-        $query = $builder->groupBy('caliber')->get();
+        $query = $builder->select("caliber")->groupBy('caliber')->get();
 
         //Assort into an array of only calibers
         $result = $query->getResult();
