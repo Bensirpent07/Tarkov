@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <div class="alert alert-success align-center" id="message-alert">Message successfully sent!</div>
+            <div class="alert alert-success align-center" id="message-alert" <?php if($success){echo 'style="display:block"';} ?>>Message successfully sent!</div>
         </div>
     </div>
     <div class="row justify-content-center">
@@ -25,7 +25,7 @@
                 </div>
                 <div class="form-group">
                     <label for="message">Message</label>
-                    <textarea name="message" rows="5" type="text" class="form-control" id="message" placeholder="Type your message here." required></textarea>
+                    <textarea name="message" rows="5" class="form-control" id="message" placeholder="Type your message here." required></textarea>
                     <p class="invalid"><?php if(isset($val['message'])){echo $val['message'];}?></p>
                 </div>
                 <button id="submitButton" type="submit" class="btn btn-primary g-recaptcha" data-sitekey="6Ldf07AZAAAAAAflQCaJcWgGFCWevCswpIrm0mJN" data-callback='onSubmit' data-action='submit'>Submit</button>

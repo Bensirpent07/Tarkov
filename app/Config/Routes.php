@@ -36,6 +36,7 @@ $routes->add('ammo/(:any)', 'AmmoPage::index/$1');
 $routes->add('fetch_ammo_chart', 'AmmoPage::fetch_ammo_chart');
 $routes->add('contact', 'SendEmail::index');
 $routes->add('send_email', 'SendEmail::sendEmail');
+$routes->add('test', 'Test::index');
 $routes->add('(:any)', 'Pages::$1');
 
 /**

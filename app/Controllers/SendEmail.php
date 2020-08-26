@@ -10,11 +10,15 @@ class SendEmail extends BaseController
         // Load form helper
         helper('form');
 
+        // Instantiate session
+        $session = \Config\Services::session();
+
         // Set css, javascript, and flashdata
         $data = [
             'css' => array('contact.css'),
             'js' => array('contact.js'),
-            'val' => $validation
+            'val' => $validation,
+            'success' => $session->get('success')
         ];
 
         // Show views
@@ -23,7 +27,7 @@ class SendEmail extends BaseController
         echo view('templates/footer', $data);
     }
     public function sendEmail(){
-        // Instantiate session
+        // Instantiate request
         $request = $this->request;
 
         // Captcha API
