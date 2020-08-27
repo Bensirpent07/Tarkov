@@ -1,4 +1,3 @@
-console.log('trying');
 $(document).ready(function(){
 	var tableData,
 		filtersArray = [];
@@ -85,8 +84,20 @@ $(document).ready(function(){
 	}
 
 	function createTable(){
+		//Cycle through each ammo type
 		$(tableData).each(function(){
-			var html = '<tr><td>'+this.ammo_name+'</td><td class="damage">'+this.damage+'</td><td class="pen">'+this.pen+'</td><td>'+this.frag+'</td><td>'+this.ricochet+'</td><td>'+this.speed+'</td></tr>'
+			//Convert floats to percentages
+			var frag = parseFloat(this.frag),
+				ricochet = parseFloat(this.ricochet);
+			if(!Number.isInteger(frag) && frag < 1){
+				frag = frag * 100;
+			}
+			if(!Number.isInteger(ricochet) && ricochet < 1){
+				ricochet = ricochet * 100;
+			}
+
+			//Create the rest of the table
+			var html = '<tr><td>'+this.ammo_name+'</td><td class="damage">'+this.damage+'</td><td class="pen">'+this.pen+'</td><td>'+frag+'%</td><td>'+ricochet+'%</td><td>'+this.speed+'</td></tr>'
 			$('tbody#ammoTable').append(html)
 		});
 	}
