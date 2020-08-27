@@ -51,7 +51,6 @@
 
     //Cycle through each cartridge, collect variables, append to cartridges variable
     foreach ($cartridges as &$cartridge){
-        echo "<br>".var_dump($cartridge);
         //Set action to parse ammunition page
         $action = "/api.php?action=parse&format=json&page=".urlencode($cartridge['id'])."&redirects=1&prop=wikitext";
 
@@ -131,3 +130,4 @@
         }
         $id++;
     }
+    echo "Operation Successful!";
