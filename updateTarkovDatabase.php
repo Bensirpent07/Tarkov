@@ -76,16 +76,16 @@
         $cartridge['pen'] = $matches[1][0];
 
         //Search for frag
-        $ex = '/fragmentation *?=(\d\.*\d*)/m';
+        $ex = '/fragmentation *?=(\d\,*\.*\d*)/m';
         preg_match($ex, $return, $matches, PREG_OFFSET_CAPTURE, 0);
         $cartridge['frag'] = $matches[1][0];
 
-        // Search for ricochet
-        $ex = '/ricochet *?=(\d+\.*\d*)/m';
+        //Search for ricochet
+        $ex = '/ricochet *?=(\d\,*\.*\d*)/m';
         preg_match($ex, $return, $matches, PREG_OFFSET_CAPTURE, 0);
         $cartridge['ric'] = $matches[1][0];
 
-        // Search for bullet velocity
+        //Search for bullet velocity
         $ex = '/velocity *?=(\d*)/m';
         preg_match($ex, $return, $matches, PREG_OFFSET_CAPTURE, 0);
         $cartridge['vel'] = $matches[1][0];
