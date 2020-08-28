@@ -83,7 +83,7 @@
         //Search for ricochet
         $ex = '/ricochet *?=(\d\,*\.*\d*)/m';
         preg_match($ex, $return, $matches, PREG_OFFSET_CAPTURE, 0);
-        $cartridge['ric'] = $matches[1][0];
+        $cartridge['ric'] = str_replace(",", ".", $matches[1][0]);
 
         //Search for bullet velocity
         $ex = '/velocity *?=(\d*)/m';
