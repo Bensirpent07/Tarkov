@@ -71,9 +71,9 @@ $(document).ready(function(){
 	function filterTable(){
 		var selectMenu = $('select#filterSelect'),
 		    value = $(selectMenu).children('option:selected').val().toLowerCase();
-		if(value != 'none'){
+		if(value !== 'none'){
 			$('tbody#ammoTable tr').filter(function(){
-				$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+				$(this).toggle($(this).data('caliber') === value);
 			});
 		}else{
 			$('tbody#ammoTable tr').css('display', 'table-row');
@@ -86,18 +86,9 @@ $(document).ready(function(){
 	function createTable(){
 		//Cycle through each ammo type
 		$(tableData).each(function(){
-			//Convert floats to percentages
-			var frag = parseFloat(this.frag),
-				ricochet = parseFloat(this.ricochet);
-			if(!Number.isInteger(frag) && frag < 1){
-				frag = frag * 100;
-			}
-			if(!Number.isInteger(ricochet) && ricochet < 1){
-				ricochet = ricochet * 100;
-			}
 
 			//Create the rest of the table
-			var html = '<tr><td>'+this.ammo_name+'</td><td class="damage">'+this.damage+'</td><td class="pen">'+this.pen+'</td><td>'+frag+'%</td><td>'+ricochet+'%</td><td>'+this.speed+'</td></tr>'
+			var html = '<tr data-caliber="'+this.caliber+'"><td>'+this.ammo_name+'</td><td class="damage">'+this.damage+'</td><td class="pen">'+this.pen+'</td><td>'+this.frag+'%</td><td>'+this.ricochet+'%</td><td>'+this.speed+'</td></tr>'
 			$('tbody#ammoTable').append(html)
 		});
 	}
