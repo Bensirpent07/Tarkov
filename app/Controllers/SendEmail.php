@@ -32,7 +32,9 @@ class SendEmail extends BaseController
 
         // Captcha API
         $captchaUser = $request->getPost('g-recaptcha-response');
-        $captchaKey = '6Ldf07AZAAAAAKG6fkQQX62NwUacuaFH8hvji3vu';
+        // Captcha Key loaded from a file left out of the repo
+        $captchaConfig = config('Config\\Credentials');
+        $captchaKey = $captchaConfig->captchaKey;
         $captchaOptions = [
             'secret' => $captchaKey,
             'response' => $captchaUser
