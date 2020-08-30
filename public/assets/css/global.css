@@ -1,0 +1,85 @@
+/*Main global css*/
+
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+html{
+	font-family: 'Roboto', sans-serif;
+	background-image: url('../images/background.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	height: 100%;
+	min-height: 100%;
+}
+body{
+	margin: 0;
+	height: 100%;
+	min-height: 100%;
+	background-color: transparent;
+	display: flex;
+	flex-direction: column;
+}
+div#overlay{
+	background-color: rgba(0,0,0,.5);
+	flex: auto;
+	display: flex;
+	flex-direction: column;
+}
+
+/* Navbar CSS */
+nav#mainNav{
+	background-color: rgba(0,0,0,.9);
+	flex: none;
+}
+nav#mainNav ul{
+	list-style-type: none;
+	margin: 0 auto;
+	max-width: 1000px;
+	padding: 0;
+	display: flex;
+	justify-content: space-around;
+}
+nav#mainNav a{
+	display: block;
+	padding: 15px 25px;
+	text-decoration: none;
+	color: gray;
+	transition: .25s;
+}
+nav#mainNav a:hover{
+	color: white;
+}
+nav#mainNav i.dropdown{
+	vertical-align: text-top;
+}
+.dropdown{
+	position: relative;
+}
+.dropdown-content{
+	transform: scaleY(0);
+	transform-origin: top;
+	position: absolute;
+	background-color: white;
+	z-index: 1;
+	transition: .25s;
+}
+.dropdown-content a{
+	text-align: center;
+	min-width: 100px;
+	display: block;
+	color: black;
+}
+.dropdown:hover .dropdown-content{
+	transform: scaleY(1);
+}
+.dropdown-content a:hover{
+	color: white!important;
+	background-color: #C3A17C;
+}
+
+/* Footer CSS */
+footer{
+	flex: none;
+	background-color: rgba(0,0,0,.9);
+	padding: 25px 0;
+	color: gray;
+}

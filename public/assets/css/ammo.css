@@ -1,0 +1,47 @@
+div#ammoContainer{
+	background-color: rgba(72, 75, 82, .5);
+}
+div#tableHeader{
+	margin: 50px 75px;
+}
+table#ammoTable{
+	background-color: rgba(72, 75, 82, .5);
+	margin-bottom: 0
+}
+tr#tableHeaders th:hover{
+	cursor: pointer;
+}
+h1#header{
+	color: #C3A17C;
+	margin-bottom: 15px;
+}
+div#filtersContainer{
+	margin-top: 50px;
+}
+div#tableHeader p, div#tableHeader span{
+	color: white;
+}
+span.label{
+	margin-right: 5px;
+	font-size: 20px;
+	vertical-align: middle;
+}
+select#filterSelect{
+	max-width: 150px;
+	width: max-content;
+}
+.damage{
+	color: red;
+}
+.pen{
+	color: green;
+}
+.sort-arrow{
+	padding-left: 3px;
+}
+tbody#ammoTable tr{
+	transition: all .5s;
+}
+tbody#ammoTable tr:hover{
+	background-color: rgb(31, 32, 34)
+}

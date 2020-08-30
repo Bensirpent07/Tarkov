@@ -1,0 +1,24 @@
+div#selectionContainer{
+	text-align: center;
+	flex-grow: 1;
+	display: flex;
+	align-items: center;
+}
+div#selectionContainer a.selectionButton{
+	display: inline-block;
+	background-color: #C3A17C;
+	color: white;
+	text-decoration: none;
+	padding: 20px 50px;
+	border-radius: 50px;
+	font-weight: bold;
+	transition: .25s;
+}
+div#selectionContainer a.selectionButton:hover{
+	background-color: #C17626;
+	cursor: pointer;
+}
+div.caliberButtons{
+	margin-top:25px;
+	margin-bottom: 25px;
+}
