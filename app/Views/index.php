@@ -1,12 +1,15 @@
 <div id="selectionContainer">
 	<div class="container">
 		<div id="initialSelectionContainer" class="row">
-			<div class="col-md-6">
+			<div class="col-md-4">
 				<a class="selectionButton" id="ammoButton">Ammo</a>
 			</div>
-			<div class="col-md-6">
-				<a class="selectionButton" id="armorButton" href="#">Armor (Coming soon)</a>
+			<div class="col-md-4">
+				<a class="selectionButton" id="armorButton" href="#">Armor (Future Development)</a>
 			</div>
+            <div class="col-md-4">
+                <a class="selectionButton" id="mapsButton" href="#">Maps (Future Development)</a>
+            </div>
 		</div>
 		<div id="ammoSelection" class="row" style="display: none">
 			<?php

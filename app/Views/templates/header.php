@@ -18,7 +18,8 @@
 				<a href="#">Tools <i class="fas fa-sort-down dropdown"></i></a>
 				<div class="dropdown-content">
 					<a href="<?=base_url()?>/ammo">Ammo</a>
-					<a href="#">Armor (Coming Soon)</a>
+					<a href="#">Armor (Future Development)</a>
+                    <a href="#">Maps (Future Development)</a>
 				</div>
 			</li>
 			<li><a href="<?=base_url()?>/about">About</a></li>
