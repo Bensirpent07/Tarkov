@@ -39,3 +39,9 @@ select#filterSelect{
 .sort-arrow{
 	padding-left: 3px;
 }
+tbody#ammoTable tr{
+	transition: all .5s;
+}
+tbody#ammoTable tr:hover{
+	background-color: rgb(31, 32, 34)
+}
