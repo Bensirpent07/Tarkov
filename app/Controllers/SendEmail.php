@@ -6,7 +6,7 @@ namespace App\Controllers;
 
 class SendEmail extends BaseController
 {
-    public function index($validation = array()){
+    public function index($data = array()){
         // Load form helper
         helper('form');
 
@@ -14,12 +14,12 @@ class SendEmail extends BaseController
         $session = \Config\Services::session();
 
         // Set css, javascript, and flashdata
-        $data = [
+        $data_push = [
             'css' => array('contact.css'),
             'js' => array('contact.js'),
-            'val' => $validation,
             'success' => $session->get('success')
         ];
+        $data = array_merge($data_push, $data);
 
         // Show views
         echo view('templates/header', $data);
@@ -50,18 +50,38 @@ class SendEmail extends BaseController
         $validation->setRules([
             'name' => 'required|alpha_dash|alpha_space',
             'email' => 'required|valid_email',
-            'subject' => 'required|alpha_numeric_punct',
-            'message' => 'required|alpha_numeric_punct'
+            'subject' => 'required',
+            'message' => 'required'
         ]);
 
         // Validate inputs
         if (!$this->validate($validation->getRules())){
-            $this->index($validation->getErrors());
+            // Run index function to show the contact page again
+            $data = [
+                'validation' => $this->validator,
+                'form_values' => [
+                    'name' => $this->request->getPost('name'),
+                    'email' => $this->request->getPost('email'),
+                    'subject' => $this->request->getPost('subject'),
+                    'message' => $this->request->getPost('message')
+                ]
+            ];
+            $this->index($data);
         }
         // Validate captcha
         elseif(!$validation->check($captchaObj->success, 'required')){
             $validation->setError('captcha','Did not pass captcha. Please try again.');
-            $this->index($validation->getErrors());
+            // Run index function to show the contact page again
+            $data = [
+                'validation' => $this->validator,
+                'form_values' => [
+                    'name' => $this->request->getPost('name'),
+                    'email' => $this->request->getPost('email'),
+                    'subject' => $this->request->getPost('subject'),
+                    'message' => $this->request->getPost('message')
+                ]
+            ];
+            $this->index($data);
         }
         else{
             // Set variables to input
